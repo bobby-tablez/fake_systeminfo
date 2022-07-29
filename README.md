@@ -2,6 +2,8 @@
 
 As Microsoft doesn't want you replacing the systeminfo binary in C:\windows\system32\, the built binary will need to be placed in C:\windows\ with the orignal deleted or renamed. 
 
+Before compiling, edit the system information fields as needed.
+
 Run the following commands:
 ```
 TAKEOWN /F C:\Windows\System32\systeminfo.exe
