@@ -18,5 +18,6 @@ Start-Process -FilePath "C:\Windows\system32\icacls.exe" -NoNewWindow -ArgumentL
 Move-Item -Path "C:\Windows\System32\systeminfo.exe" -Destination "C:\Windows\System32\old_systeminfo.exe"
 Move-Item -Path "C:\path\to\build\systeminfo.exe" -Destination "C:\Windows\systeminfo.exe" # will not execute from System32
 
+# Allow for "direct" execution
 New-Item -ItemType HardLink -Path "C:\Windows\System32\systeminfo.exe.lnk" -Target "C:\Windows\systeminfo.exe"
 ```
