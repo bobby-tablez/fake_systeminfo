@@ -11,7 +11,12 @@ ICACLS C:\Windows\System32\systeminfo.exe /grant everyopne:F
 MOVE C:\Windows\System32\systeminfo.exe C:\Windows\System32\systeminfo.exe.bak
 ```
 
-Move fake system info binary:
+Gain Access to naitive systeminfo.exe and move built binary into common PATH directory
 ```
-COPY systeminfo.exe C:\Windows\
+Start-Process -FilePath "C:\Windows\system32\takeown.exe" -NoNewWindow -ArgumentList "/F C:\Windows\System32\systeminfo.exe" -wait
+Start-Process -FilePath "C:\Windows\system32\icacls.exe" -NoNewWindow -ArgumentList "C:\Windows\System32\systeminfo.exe /grant everyone:F" -wait
+Move-Item -Path "C:\Windows\System32\systeminfo.exe" -Destination "C:\Windows\System32\old_systeminfo.exe"
+Move-Item -Path "C:\path\to\build\systeminfo.exe" -Destination "C:\Windows\systeminfo.exe" # will not execute from System32
+
+New-Item -ItemType HardLink -Path "C:\Windows\System32\systeminfo.exe.lnk" -Target "C:\Windows\systeminfo.exe"
 ```
