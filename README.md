@@ -4,6 +4,8 @@
 
 The systeminfo.exe displays detailed info related to your system. When trying to pass a virtual machine as a legitimate "silicone" system can be a challenge as systeminfo.exe will display telling details such as BIOS, network card, or manufacturer information that may relate to the hypervisor or host system such as Vmware, or Virtualbox. 
 
+![fake_systeminfo.exe_example](https://github.com/bobby-tablez/fake_systeminfo/blob/main/fake_sysinfo_example.png?raw=true) 
+
 Systeminfo is often used by threat actors in a honeypot, or tech support scammers to verify the legitimacy of the system. This project builds a fake "systeminfo.exe" which replaces all of the telling fields with fields that would appear on a legitimate silicone system. To legitimize some of the non-telling fields, the binary will function similiar to the original systeminfo.exe and will pull and display accurate information such as OS details, username, Hotfixes, etc. 
 
 There are many other ways to determine the system type such as registery values or using WMI queries, however this addresses one common method of determining the system type. 
