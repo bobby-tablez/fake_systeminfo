@@ -12,6 +12,7 @@ There are many other ways to determine the system type such as registery values 
 
 ### Replaced systeminfo.exe fields (spoofed):
 * System Minufacturer: (set to Dell, Inc.)
+* System Model: (Pulled from a list of Dell laptops)
 * Processors(s): (Set to "1 Processor(s) Installed"
 		"[01]: 11th Gen Intel Core i7-11700 4.90 GHz Turbo\n")
 * BIOS Version: (Set to: "DELL -1072009, 1.4.4, American Megatrends-5000B")
