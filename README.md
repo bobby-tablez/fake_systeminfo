@@ -53,7 +53,7 @@ As Microsoft doesn't want you replacing the systeminfo binary in C:\windows\syst
 
 ```batch
 TAKEOWN /F "C:\Windows\System32\systeminfo.exe"
-ICACLS "C:\Windows\System32\systeminfo.exe" /grant everyopne:F
+ICACLS "C:\Windows\System32\systeminfo.exe" /grant everyone:F
 MOVE "C:\Windows\System32\systeminfo.exe" "C:\Windows\System32\__systeminfo.exe.bak"
 ```
 Next drop your compiled systeminfo.exe binary into System32. 
